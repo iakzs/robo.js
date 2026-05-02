@@ -117,7 +117,7 @@ export default () => {
 	const job = Cron('*/5 * * * * *', 'cron/job.js')
 
 	// Only file-based jobs can be persisted
-	const jobId = await job.save()
+	const jobId = await job.save('my-job')
 
 	// Retrieve a saved job using its ID
 	const savedJob = await Cron.get('my-job')
